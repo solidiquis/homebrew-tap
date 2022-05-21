@@ -6,6 +6,6 @@ class AlacrittyFontSize < Formula
   version "0.1.0"
 
   def install
-    bin.install "main.rb"
+    bin.install "main.rb" => "alacritty_font_size"
   end
 end
