@@ -1,4 +1,4 @@
-# My taps
+# A tap for my own formulae
 
 Grabbing the tap:
 ```
