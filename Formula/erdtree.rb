@@ -1,11 +1,20 @@
 class Erdtree < Formula
-  desc "Colorful file tree visualizer for the terminal with memory sizes adjacent."
+  version "1.1.0"
+  desc "erdtree (et) is a multi-threaded filetree visualizer and disk usage analyzer."
   homepage "https://github.com/solidiquis/erdtree"
-  url "https://github.com/solidiquis/erdtree/releases/download/v0.1.0/erdtree-0.1.0-x86_64-apple-darwin.tar.gz"
-  sha256 "2b10822721164fd467a123565841a3388b87553d9791af34ebacce8f7fec8665"
-  version "0.1.0"
+  license "MIT"
+
+  if OS.mac?
+    url "https://github.com/solidiquis/erdtree/releases/download/v#{version}/et-v#{version}-x86_64-apple-darwin.tar.gz"
+    sha256 "14382652e8474c19aaec1ca1874da9a9a6c28f18e82a777c901d492e536bf909"
+  elsif OS.linux?
+    url "https://github.com/solidiquis/erdtree/releases/download/v#{version}/et-v#{version}-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "db30d05c073bed3dde34f6273dbec5986fb52fa564f111ef467a65ee44fb5653"
+  end
+
+  conflicts_with "erdtree"
 
   def install
-    bin.install "erdtree"
+    bin.install "et"
   end
 end
